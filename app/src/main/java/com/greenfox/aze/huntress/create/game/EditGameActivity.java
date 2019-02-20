@@ -56,7 +56,7 @@ public class EditGameActivity extends AppCompatActivity implements GameEditPrese
         name = findViewById(R.id.input_name);
         location = findViewById(R.id.input_location);
         location.setFocusable(false);
-        create = findViewById(R.id.button_create);
+        create = findViewById(R.id.button_add_challenge);
         challenges = findViewById(R.id.challenge_list);
         challenges.setNestedScrollingEnabled(false);
         challenges.addItemDecoration(new DividerItemDecoration(this,

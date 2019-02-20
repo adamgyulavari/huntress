@@ -58,7 +58,7 @@ public class GameEditPresenter {
                 }
             });
         } else {
-
+            game = new Game();
         }
     }
 
@@ -67,10 +67,10 @@ public class GameEditPresenter {
     }
 
     public void saveGame(String name) {
-        game.name = name;
         if (key == null) {
             key = database.child("games").push().getKey();
         }
+        game.name = name;
         database.child("games/"+key).setValue(game);
         geoFire.setLocation(key, new GeoLocation(start.latitude, start.longitude), (key1, error) -> {});
     }

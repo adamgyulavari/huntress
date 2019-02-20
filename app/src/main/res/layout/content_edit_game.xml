@@ -31,11 +31,13 @@
             android:ems="10"
             android:hint="@string/location" />
 
-        <Button
-            android:id="@+id/button_create"
+        <com.joanzapata.iconify.widget.IconButton
+            android:id="@+id/button_add_challenge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_save" />
+            android:background="@color/colorPrimary"
+            android:text="@string/add_challenge"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Colored" />
 
         <TextView
             android:layout_width="match_parent"
