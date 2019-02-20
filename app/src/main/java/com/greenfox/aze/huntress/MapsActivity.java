@@ -4,7 +4,6 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Location;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -19,7 +18,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.greenfox.aze.huntress.create.game.EditGameActivity;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -42,8 +41,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         select.setOnClickListener(v -> {
             Intent result = new Intent();
-            result.putExtra(CreateActivity.LOCATION_EXTRA, selected);
-            setResult(CreateActivity.PLACE_PICKER_REQUEST, result);
+            result.putExtra(EditGameActivity.LOCATION_EXTRA, selected);
+            setResult(EditGameActivity.PLACE_PICKER_REQUEST, result);
             finish();
         });
     }
@@ -68,8 +67,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     PERMISSION_REQUEST_CODE);
             return;
         }
-        if (getIntent().getExtras() != null && getIntent().getParcelableExtra(CreateActivity.LOCATION_EXTRA) != null) {
-            selectLocation(getIntent().getParcelableExtra(CreateActivity.LOCATION_EXTRA));
+        if (getIntent().getExtras() != null && getIntent().getParcelableExtra(EditGameActivity.LOCATION_EXTRA) != null) {
+            selectLocation(getIntent().getParcelableExtra(EditGameActivity.LOCATION_EXTRA));
         }
         showLastLocation();
     }

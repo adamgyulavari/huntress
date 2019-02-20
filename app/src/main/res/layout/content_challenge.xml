@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".create.game.EditGameActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".CreateActivity"
-    tools:showIn="@layout/activity_create">
+    tools:showIn="@layout/activity_edit_game">
 
 
     <LinearLayout
@@ -34,7 +35,20 @@
             android:id="@+id/button_create"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_create" />
+            android:text="@string/btn_save" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/challenges"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/challenge_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
